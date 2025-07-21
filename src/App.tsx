@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Blob from "./components/Blob.js";
 import SkillsSlider from "./components/SkillsSlider.js";
+import Projects from "./components/Projects.js";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Header />
             <Hero />
             <SkillsSlider />
+            <Projects />
 
             <div className="h-screen"></div>
         </main>

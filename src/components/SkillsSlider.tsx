@@ -61,7 +61,7 @@ export default function SkillsSlider() {
 
     return (
         <section className="container">
-            <div className="max-w-lg mx-auto relative overflow-hidden h-[8rem]">
+            <div className="max-w-2xl mx-auto relative overflow-hidden h-[8rem] mask">
                 <motion.ul
                     ref={ref}
                     className="absolute left-0 flex space-x-8 p-4 max-w-md mx-auto"
