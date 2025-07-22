@@ -2,7 +2,7 @@
 export default function Description() {
     return (
         <section className="container max-w-2xl mb-44">
-            <div className="text-center leading-12 font-semibold">
+            <div className="text-center leading-8 md:leading-12 font-semibold text-sm md:text-base">
                 I’m a <span className="pill">full-stack</span> developer with a
                 strong foundation in both{" "}
                 <span className="pill">front-end</span> and{" "}
