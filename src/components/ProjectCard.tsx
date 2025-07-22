@@ -58,7 +58,7 @@ export default function Card({
                             visit project
                         </a>
                     ) : (
-                        "comming soon"
+                        "coming soon"
                     )}
                 </div>
 
