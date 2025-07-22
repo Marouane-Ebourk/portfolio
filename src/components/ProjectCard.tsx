@@ -44,7 +44,7 @@ export default function Card({
                 }}
             >
                 {/* part 1 */}
-                <div className="order-2 md:order-1 flex flex-col justify-between items-start">
+                <div className="order-2 md:order-1 flex flex-col justify-between gap-4 items-start">
                     <div>
                         <h2 className="text-2xl font-bold mb-3">{title}</h2>
                         <div>{description}</div>
