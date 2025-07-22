@@ -1,21 +1,22 @@
 import "./App.css";
 import "./assets/blob.js";
-import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Blob from "./components/Blob.js";
 import SkillsSlider from "./components/SkillsSlider.js";
 import Projects from "./components/Projects.js";
+import Description from "./components/Description.js";
+import Footer from "./components/Footer.js";
 
 function App() {
     return (
-        <main className="bg-slate-900 p-4 min-h-screen text-white">
+        <main className="bg-black p-4 min-h-screen text-white">
             <Blob />
-            <Header />
             <Hero />
             <SkillsSlider />
             <Projects />
+            <Description />
 
-            <div className="h-screen"></div>
+            <Footer />
         </main>
     );
 }

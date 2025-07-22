@@ -20,7 +20,6 @@ export default function Card({
     targetScale,
     progress,
 }: CardProps) {
-
     const container = useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -29,46 +28,58 @@ export default function Card({
     });
 
     const imageScale = useTransform(scrollYProgress, [0, 1], [3, 1]);
-    const scale= useTransform (progress, range, [1, targetScale])
-
+    const scale = useTransform(progress, range, [1, targetScale]);
 
     return (
-        <motion.div
-            className="h-[50rem] flex items-center justify-center w-full sticky"
-            style={{scale, top: `calc(-10% + ${index * 25}px)` }}
+        <div
+            className="h-[100vh] flex items-center justify-center w-full sticky top-0"
+            ref={container}
         >
-            <div
-                className="w-full max-w-2xl h-[500px] rounded-2xl grid grid-cols-2 gap-8 py-14 px-7"
-                style={{ backgroundColor: color, marginBottom: "3rem" }}
-                ref={container}
+            <motion.div
+                className="bg-slate-900 relative w-full max-w-2xl min-h-[400px] rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-8 py-14 px-7 overflow-hidden"
+                style={{
+                    marginBottom: "3rem",
+                    scale,
+                    top: `calc(-10% + ${index * 25}px)`,
+                }}
             >
                 {/* part 1 */}
-                <div className="flex flex-col justify-between">
+                <div className="order-2 md:order-1 flex flex-col justify-between items-start">
                     <div>
                         <h2 className="text-2xl font-bold mb-3">{title}</h2>
                         <div>{description}</div>
                     </div>
-                    <a href={link} className="text-blue-500 underline">
-                        visit project
-                    </a>
+                    {link ? (
+                        <a
+                            href={link}
+                            target="_blank"
+                            className="rounded-[2rem] border border-gray-700 hover:bg-white hover:text-black transition-all px-4 py-2"
+                        >
+                            visit project
+                        </a>
+                    ) : (
+                        "comming soon"
+                    )}
                 </div>
 
                 {/* part 2 */}
                 <div>
-                    <div className="overflow-hidden">
-                        <motion.div style={{ scale: imageScale }}>
-                            <img src={src} className="w-full object-cover" />
-                        </motion.div>
+                    <div className="relative">
+                        {/* glow */}
+                        <div
+                            className="absolute -right-5 w-[110%] h-[110%] rounded-full overflow-hidden blur-[20px] filter -z-10 opacity-20"
+                            style={{ backgroundColor: color }}
+                        ></div>
+                        <div className="overflow-hidden">
+                            <motion.img
+                                src={src}
+                                style={{ scale: imageScale }}
+                                className="w-full object-cover aspect-video object-top"
+                            />
+                        </div>
                     </div>
                 </div>
-
-                {/* <h2>{title}</h2>
-            <p>{description}</p>
-            <img src={src} alt={title} />
-            <a href={link} style={{ backgroundColor: color }}>
-                View Project
-            </a> */}
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
     );
 }

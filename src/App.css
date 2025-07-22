@@ -89,7 +89,7 @@ body {
         no-repeat fixed;
 }
 
-button {
+.glowing-btn {
     border-radius: 1rem;
     letter-spacing: 0.1ch;
     background: var(--bg);
@@ -104,7 +104,7 @@ button {
     position: relative;
     padding: 0.3rem 1rem;
 }
-button::before {
+.glowing-btn::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -113,7 +113,7 @@ button::before {
     z-index: 2;
     border-radius: 1rem;
 }
-button span {
+.glowing-btn span {
     /* background: var(--glow), black; */
     /* background-clip: text; */
     /* color: transparent; */
@@ -123,10 +123,10 @@ button span {
     position: relative;
     inset: 0;
 }
-:root:has(button:active) {
+:root:has(.glowing-btn:active) {
     --size: 300px;
 }
-button::after {
+.glowing-btn::after {
     content: "";
     position: absolute;
     inset: -4px;
@@ -155,4 +155,32 @@ button::after {
         white 80%,
         transparent
     );
+}
+
+/* ============================== */
+/* projects section */
+/* ============================== */
+
+.pill {
+    background: black;
+    border: 1px solid gray;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background: linear-gradient(135deg, #ffffff, #9c9c9c, #ffffff);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    animation: shimmer 5s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }

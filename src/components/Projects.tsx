@@ -4,18 +4,8 @@ import { projects } from "../data.ts";
 import { useScroll } from "motion/react";
 import Card from "./ProjectCard";
 import type { Project } from "../types";
-import Lenis from "lenis";
 
 export default function Projects() {
-    // smooth scrolling
-
-    const lenis = new Lenis({
-        autoRaf: true,
-    });
-
-    lenis.on("scroll", (e) => {
-        // console.log(e);
-    });
 
     const container = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -23,7 +13,7 @@ export default function Projects() {
         offset: ["start start", "end end"],
     });
     return (
-        <section className="container" ref={container}>
+        <section className="container my-20" id="projects" ref={container}>
             <div className="flex flex-col items-center">
                 {projects.map((project: Project, i: number) => {
                     const targetScale = 1 - (projects.length - i) * 0.05;
