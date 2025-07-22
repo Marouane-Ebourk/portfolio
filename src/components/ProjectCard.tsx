@@ -63,7 +63,7 @@ export default function Card({
                 </div>
 
                 {/* part 2 */}
-                <div>
+                <div className="order-1 md:order-2">
                     <div className="relative">
                         {/* glow */}
                         <div
