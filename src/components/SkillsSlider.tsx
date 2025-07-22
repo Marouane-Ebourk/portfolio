@@ -5,15 +5,15 @@ import useMeasure from "react-use-measure";
 
 export default function SkillsSlider() {
     const skills = [
-        { name: "JavaScript", logo: "/skills/javascript.png" },
-        { name: "TypeScript", logo: "/skills/typescript.png" },
-        { name: "Python", logo: "/skills/python.png" },
-        { name: "CSS", logo: "/skills/css3.png" },
-        { name: "HTML", logo: "/skills/html5.png" },
-        { name: "PostgreSQL", logo: "/skills/postgresql.png" },
-        { name: "React", logo: "/skills/react.png" },
-        { name: "VueJs", logo: "/skills/vuejs.png" },
-        { name: "Wordpress", logo: "/skills/wordpress.png" },
+        { name: "JavaScript", logo: "/skills/javascript.webp" },
+        { name: "TypeScript", logo: "/skills/typescript.webp" },
+        { name: "Python", logo: "/skills/python.webp" },
+        { name: "CSS", logo: "/skills/css3.webp" },
+        { name: "HTML", logo: "/skills/html5.webp" },
+        { name: "PostgreSQL", logo: "/skills/postgresql.webp" },
+        { name: "React", logo: "/skills/react.webp" },
+        { name: "VueJs", logo: "/skills/vuejs.webp" },
+        { name: "Wordpress", logo: "/skills/wordpress.webp" },
     ];
 
     const SLOW_DURATION = 25; // seconds
@@ -75,8 +75,8 @@ export default function SkillsSlider() {
                         setDuration(FAST_DURATION);
                     }}
                 >
-                    {[...skills, ...skills].map((skill) => (
-                        <li key={skill.name} className="flex-shrink-0">
+                    {[...skills, ...skills].map((skill, index) => (
+                        <li key={index} className="flex-shrink-0">
                             <Skill name={skill.name} logo={skill.logo} />
                         </li>
                     ))}

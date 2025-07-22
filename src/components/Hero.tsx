@@ -1,5 +1,5 @@
 import Lenis from "lenis";
-import HeadShot from "../assets/headshot.png";
+import HeadShot from "../assets/headshot.webp";
 import { motion } from "motion/react";
 
 export default function Hero() {
