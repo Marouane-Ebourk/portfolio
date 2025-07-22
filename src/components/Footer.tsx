@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="container flex justify-between pb-10 gap-4 flex-wrap">
+        <footer className="container flex justify-between pb-10 gap-4 flex-wrap relative">
             <p>© 2025 Marouane Ebourk. All rights reserved.</p>
             <p>Built with ❤️ using React and Tailwind CSS and framer motion.</p>
             <p>
